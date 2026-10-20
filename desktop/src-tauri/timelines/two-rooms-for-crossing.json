@@ -1,0 +1,89 @@
+{
+ "steps": [
+  {
+   "at": 0,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "beta-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "beta-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

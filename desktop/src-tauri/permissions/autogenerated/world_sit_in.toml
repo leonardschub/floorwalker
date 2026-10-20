@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-sit-in"
+description = "Enables the world_sit_in command without any pre-configured scope."
+commands.allow = ["world_sit_in"]
+
+[[permission]]
+identifier = "deny-world-sit-in"
+description = "Denies the world_sit_in command without any pre-configured scope."
+commands.deny = ["world_sit_in"]

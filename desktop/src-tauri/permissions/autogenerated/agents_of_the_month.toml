@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-agents-of-the-month"
+description = "Enables the agents_of_the_month command without any pre-configured scope."
+commands.allow = ["agents_of_the_month"]
+
+[[permission]]
+identifier = "deny-agents-of-the-month"
+description = "Denies the agents_of_the_month command without any pre-configured scope."
+commands.deny = ["agents_of_the_month"]

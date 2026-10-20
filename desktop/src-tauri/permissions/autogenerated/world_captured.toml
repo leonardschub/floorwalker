@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-captured"
+description = "Enables the world_captured command without any pre-configured scope."
+commands.allow = ["world_captured"]
+
+[[permission]]
+identifier = "deny-world-captured"
+description = "Denies the world_captured command without any pre-configured scope."
+commands.deny = ["world_captured"]

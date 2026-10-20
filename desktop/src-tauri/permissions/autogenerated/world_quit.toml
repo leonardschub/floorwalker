@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-quit"
+description = "Enables the world_quit command without any pre-configured scope."
+commands.allow = ["world_quit"]
+
+[[permission]]
+identifier = "deny-world-quit"
+description = "Denies the world_quit command without any pre-configured scope."
+commands.deny = ["world_quit"]

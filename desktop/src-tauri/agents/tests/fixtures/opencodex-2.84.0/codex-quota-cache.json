@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "quotas": {
+    "__main__": {
+      "updatedAt": 1792231140000,
+      "credits": {
+        "hasCredits": false,
+        "unlimited": false,
+        "balance": 0
+      },
+      "weeklyPercent": 43,
+      "weeklyResetAt": 1792490400,
+      "shortPercent": 12,
+      "shortResetAt": 1792234800,
+      "shortWindowSeconds": 18000
+    },
+    "0f3a9c5e7b1d2468ace0f3a9c5e7b1d2": {
+      "updatedAt": 1792231140000,
+      "weeklyPercent": 80,
+      "weeklyResetAt": 1792317600
+    }
+  },
+  "mainPolicyQuota": {
+    "identityKey": "placeholder",
+    "quota": {
+      "weeklyPercent": 43
+    }
+  },
+  "history": {
+    "version": 1,
+    "accounts": {}
+  }
+}

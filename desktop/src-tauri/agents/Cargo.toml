@@ -1,0 +1,20 @@
+[package]
+name = "agents"
+version = "0.1.0"
+edition = "2021"
+description = "The agent registry (ADR-0010): reads Claude Code's and opencodex's files, read-only, and serves metadata-only snapshots. No Tauri or Bevy types."
+
+# Every dependency the registry's tickets need is declared here once (tickets 12-17), so
+# parallel branches do not fight over Cargo.toml and Cargo.lock.
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Transcript timestamps, and local calendar days and months for the statistics views.
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+# Watching transcripts and the opencodex ledger for growth (ticket 14).
+notify = { version = "8", default-features = false }
+# Whether a PID is alive, for the sessions/<pid>.json liveness fallback (ticket 14).
+libc = "0.2"
+
+[dev-dependencies]
+tempfile = "3"

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-click"
+description = "Enables the world_click command without any pre-configured scope."
+commands.allow = ["world_click"]
+
+[[permission]]
+identifier = "deny-world-click"
+description = "Denies the world_click command without any pre-configured scope."
+commands.deny = ["world_click"]

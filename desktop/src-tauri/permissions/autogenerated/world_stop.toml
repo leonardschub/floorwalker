@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-stop"
+description = "Enables the world_stop command without any pre-configured scope."
+commands.allow = ["world_stop"]
+
+[[permission]]
+identifier = "deny-world-stop"
+description = "Denies the world_stop command without any pre-configured scope."
+commands.deny = ["world_stop"]

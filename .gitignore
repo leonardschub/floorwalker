@@ -1,0 +1,14 @@
+node_modules
+packages/proto/src/gen
+.vscode/schemas
+**/dist/
+**/node_modules/
+*.tsbuildinfo
+.agent-teams/
+
+# world-assets build output (ADR-0012: only the scripts are committed)
+desktop/world-assets/out/
+desktop/world-assets/regenerate.log
+desktop/world-assets/regenerate.lock
+desktop/world-assets/__pycache__/
+desktop/world-assets/tests/__pycache__/

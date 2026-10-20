@@ -1,0 +1,26 @@
+{ "steps": [
+ {"at": 0, "projects": [
+  {"id": "-home-dev-Projects-Faces", "name": "Faces", "sessions": [
+   {"id": "f1000000-faces", "title": "Every company's face", "started": -60000, "root": {"model": "Opus 5.5", "modelId": "claude-opus-5-5", "state": "busy", "children": [
+    {"id": "f-sol", "name": "ocx-gpt-6-1-sol", "model": "GPT-6.1 Sol", "modelId": "gpt-6.1-sol", "state": "running"},
+    {"id": "f-grok", "name": "grok", "model": "grok-5", "modelId": "grok-5", "state": "running"},
+    {"id": "f-gemini", "name": "gemini", "model": "gemini-3-pro", "modelId": "gemini-3-pro", "state": "running"},
+    {"id": "f-o4", "name": "o-series", "model": "o4-mini", "modelId": "o4-mini", "state": "running"},
+    {"id": "f-mystery", "name": "unknown", "model": "mystery-7", "modelId": "mystery-7", "state": "running"},
+    {"id": "f-none", "name": "Explore", "state": "running"},
+    {"id": "f-long", "name": "long", "model": "an-unknown-model-with-a-very-long-id-2026", "modelId": "an-unknown-model-with-a-very-long-id-2026", "state": "running"},
+    {"id": "f-done", "name": "finished", "model": "Opus 5.5", "modelId": "claude-opus-5-5", "state": "finished"},
+    {"id": "f-done-gpt", "name": "finished", "model": "GPT-6.1 Sol", "modelId": "gpt-6.1-sol", "state": "finished"}
+   ]}}
+  ]},
+  {"id": "-home-dev-Projects-an-extraordinarily-long-project-name-for-the-sign-over-its-doorway", "name": "an-extraordinarily-long-project-name-for-the-sign-over-its-doorway", "sessions": [
+   {"id": "l1000000-long", "started": -50000, "root": {"model": "Sonnet 5.5", "modelId": "claude-sonnet-5-5", "state": "idle"}}
+  ]},
+  {"id": "-home-dev-Projects-Zuerich", "name": "Zürich-Straße 项目", "sessions": [
+   {"id": "z1000000-zur", "started": -40000, "root": {"model": "Haiku 5.5", "modelId": "claude-haiku-5-5", "state": "busy"}}
+  ]},
+  {"id": "-home-dev-Projects-AgentGamified", "name": "AgentGamified-sweatshop-rooms", "sessions": [
+   {"id": "g1000000-mid", "started": -30000, "root": {"model": "Opus 5.5", "modelId": "claude-opus-5-5", "state": "busy"}}
+  ]}
+ ]}
+]}

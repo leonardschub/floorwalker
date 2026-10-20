@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-agents-snapshot"
+description = "Enables the agents_snapshot command without any pre-configured scope."
+commands.allow = ["agents_snapshot"]
+
+[[permission]]
+identifier = "deny-agents-snapshot"
+description = "Denies the agents_snapshot command without any pre-configured scope."
+commands.deny = ["agents_snapshot"]

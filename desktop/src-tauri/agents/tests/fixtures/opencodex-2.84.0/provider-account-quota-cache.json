@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "rows": {
+    "anthropic\u00001111111111111111111111111111111111111111": {
+      "fiveHourPercent": 25,
+      "fiveHourResetAt": 1792238400000,
+      "weeklyPercent": 40,
+      "weeklyResetAt": 1792576800000,
+      "monthlyPercent": 99,
+      "monthlyResetAt": 1792227600000,
+      "customWindows": [
+        {
+          "label": "Fable",
+          "scope": "model",
+          "percent": 10,
+          "resetAt": 1792576800000
+        }
+      ],
+      "updatedAt": 1792231140000
+    },
+    "2222222222222222222222222222222222222222": {
+      "weeklyPercent": 5,
+      "weeklyResetAt": 1792663200000,
+      "updatedAt": 1792231140000
+    }
+  },
+  "kiroVerdicts": {}
+}

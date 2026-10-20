@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+@import '@heroui/styles';
+@import './styles/theme.css';
+@plugin "@tailwindcss/typography";
+
+/*
+ * The legal documents' prose layer.
+ *
+ * The typography plugin ships a palette of its own. This remaps its
+ * `--tw-prose-*` variables onto the semantic tokens, so a document follows the
+ * theme switch like every other surface; the `invert` set takes the same
+ * tokens because the tokens already carry both modes, and no second palette
+ * exists to drift from the first.
+ *
+ * The treatment is the design lock's: prose at 15px on a 1.72 line height,
+ * section headings on the locked ladder — 16px for an H2, 14px below it — and
+ * no measure of its own, because the page's container already carries 70ch.
+ */
+.prose {
+ --tw-prose-body: var(--foreground);
+ --tw-prose-headings: var(--foreground);
+ --tw-prose-lead: var(--muted);
+ --tw-prose-links: var(--accent);
+ --tw-prose-bold: var(--foreground);
+ --tw-prose-counters: var(--accent);
+ --tw-prose-bullets: var(--accent);
+ --tw-prose-hr: var(--separator);
+ --tw-prose-quotes: var(--foreground);
+ --tw-prose-quote-borders: var(--separator-strong);
+ --tw-prose-captions: var(--muted);
+ --tw-prose-kbd: var(--foreground);
+ --tw-prose-kbd-shadows: var(--separator-strong);
+ --tw-prose-code: var(--foreground);
+ --tw-prose-pre-code: var(--foreground);
+ --tw-prose-pre-bg: var(--field-background);
+ --tw-prose-th-borders: var(--separator-strong);
+ --tw-prose-td-borders: var(--separator);
+
+ --tw-prose-invert-body: var(--foreground);
+ --tw-prose-invert-headings: var(--foreground);
+ --tw-prose-invert-lead: var(--muted);
+ --tw-prose-invert-links: var(--accent);
+ --tw-prose-invert-bold: var(--foreground);
+ --tw-prose-invert-counters: var(--accent);
+ --tw-prose-invert-bullets: var(--accent);
+ --tw-prose-invert-hr: var(--separator);
+ --tw-prose-invert-quotes: var(--foreground);
+ --tw-prose-invert-quote-borders: var(--separator-strong);
+ --tw-prose-invert-captions: var(--muted);
+ --tw-prose-invert-kbd: var(--foreground);
+ --tw-prose-invert-kbd-shadows: var(--separator-strong);
+ --tw-prose-invert-code: var(--foreground);
+ --tw-prose-invert-pre-code: var(--foreground);
+ --tw-prose-invert-pre-bg: var(--field-background);
+ --tw-prose-invert-th-borders: var(--separator-strong);
+ --tw-prose-invert-td-borders: var(--separator);
+
+ max-width: none;
+ font-size: 15px;
+ line-height: 1.72;
+}
+
+/* Section headings on the locked ladder: the page title above the card is the
+   document's only H1, so the body's headings start at H2. */
+.prose :is(h2) {
+ font-size: var(--text-base);
+ font-weight: 600;
+}
+
+.prose :is(h3, h4, h5, h6) {
+ font-size: var(--text-sm);
+ font-weight: 600;
+}
+
+.prose :is(code, kbd, pre, samp) {
+ font-family: var(--font-mono);
+}
+
+/*
+ * The license page's entries are long code blocks. The components map wraps
+ * each `pre` in a focusable scroll container, and the plugin's own
+ * `overflow-x: auto` is released so that container is the one that scrolls,
+ * rather than a scrollable block inside a scrollable wrapper.
+ */
+.prose pre {
+ overflow-x: visible;
+ border: 1px solid var(--separator);
+ border-radius: var(--radius-sm);
+ padding: 12px 14px;
+}
+
+/* The desktop main window is transparent (desktop/src-tauri/tauri.conf.json), so html
+   and body paint the page background on every screen. The world screen lifts that only
+   while the running world shows through its world view (world/use-world.ts). */
+html.world-see-through,
+html.world-see-through body {
+ background-color: transparent;
+}

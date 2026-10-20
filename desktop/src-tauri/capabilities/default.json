@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "identifier": "default",
+  "description": "Least-privilege shell: the main window only, plus the world contract (with sitting in a session from the side panel, leaving the seated view, and the seated session's terminal stream and input), the agent registry's snapshot, opencodex statistics, Of the month and token statistics, starting a new background session in a project (New session), the native message dialog for the quit prompt, and opening http and https links (only) in the default browser from the seated terminal.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "allow-world-start",
+    "allow-world-stop",
+    "allow-world-status",
+    "allow-world-rect",
+    "allow-world-look",
+    "allow-world-click",
+    "allow-world-shown",
+    "allow-world-go-to-desk",
+    "allow-world-captured",
+    "allow-world-quit",
+    "allow-world-settings",
+    "allow-world-strings",
+    "allow-world-sit-in",
+    "allow-world-leave",
+    "allow-terminal-stream",
+    "allow-terminal-input",
+    "allow-agents-snapshot",
+    "allow-agents-opencodex-statistics",
+    "allow-agents-token-statistics",
+    "allow-agents-of-the-month",
+    "allow-session-new",
+    "dialog:allow-message",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [{ "url": "http://*" }, { "url": "https://*" }]
+    }
+  ]
+}

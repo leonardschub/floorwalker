@@ -1,0 +1,16 @@
+{
+  "name": "floorwalker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+    "test": "pnpm --filter web test && pnpm --filter web legal:check",
+    "lint": "pnpm --filter web lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-or-later",
+  "packageManager": "pnpm@10.28.1"
+}

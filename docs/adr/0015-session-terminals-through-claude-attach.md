@@ -1,0 +1,34 @@
+# Session terminals come from running `claude attach` in app-owned terminals, and they write only what the user types
+
+> Amends [ADR-0010](0010-rust-agent-registry-from-read-only-files.md), alongside [ADR-0013](0013-kill-ends-the-real-session.md) and [ADR-0014](0014-work-harder-sends-a-prompt.md): the registry still learns about agents only by reading files and `claude agents --json`, but the app may now attach to background sessions and type into them for the user.
+
+The desktop app shows a background session's terminal on its root agent's PC, and lets the user type into it from the seated view, by running `claude attach <id>` itself under a pseudo-terminal it owns, at a fixed 100 × 30, with no window. A Bevy-free `terminals` crate keeps an `alacritty_terminal` grid per attach for the in-world picture, and while the user is seated forwards the raw output to an xterm.js overlay and the user's keys back. Only background sessions (`kind: background` in `claude agents --json`) are attachable; sessions started in an ordinary terminal are never touched. Through session terminals the app writes to a session only the bytes the user types while seated, and starts a background session (`claude --bg`) only when the user clicks New session; session terminals never stop, remove or message a session. The punishments' own effects are ADR-0013 and ADR-0014 and are unchanged. Quitting hangs up every attach, which leaves every session running. Decided with the effort owner on 2026-10-18/19 ([Which sessions are attachable](../../.scratch/agent-screens/issues/04-grilling-which-sessions-are-attachable.md), [How session terminals flow through the app](../../.scratch/agent-screens/issues/05-grilling-how-session-terminals-flow-through-the-app.md)).
+
+## Considered Options
+
+- **Talking to Claude Code's supervisor socket directly:** rejected. The attach protocol behind `control.sock` is internal and undocumented; `claude attach` is the documented door.
+- **Reaching sessions started in a terminal** (a launch wrapper, tmux, taking over the terminal emulator's PTY master): rejected by the owner. A wrapper only covers sessions started through it, and taking over another program's PTY fights it for every byte. The user moves such a session to the background with `/bg` instead.
+- **The messaging socket** (`messagingSocketPath`): it starts a new turn with a text message; it sends no keys and shows no screen, so it can't answer a permission prompt or show the terminal.
+- **Remote Control:** a chat UI on claude.ai routed through Anthropic's servers, not the terminal, with no local API.
+- **Replaying `claude logs`:** raw bytes with no size and a new process per call; it can't type.
+- **One terminal emulator in the webview only:** the in-world PC needs the screen in Rust when nobody is seated; two emulators parse the same stream, and only xterm.js answers terminal queries, only while seated.
+
+## Consequences
+
+- The multi-viewer and size behaviour (shared input; the latest attach or resize sets the size for every viewer), the process retitle that reveals agent view, and the attach protocol are undocumented, and agent view is a research preview. A Claude Code update can break session terminals; the fake attach's captured fixtures pin what was tested.
+- Each attach is a full Claude Code process of about 100 MB, and an attached session never goes dormant. So the app keeps a live budget (the seated session plus the 3 nearest PCs in the user's room) and hangs up the rest.
+- `←`, `/exit` and double Ctrl+C turn an attach into agent view, which can dispatch, reply to and delete any background session. The app detects it, closes the seated view and re-attaches, so agent view is never shown.
+- The app now holds the user's keystrokes for a session in memory while seated, and starts processes in project directories. It still never reads message or tool content into the registry, and nothing is written to disk.
+
+## Amendments
+
+Recorded after the code review of the agent-screens effort (2026-10-19). Each is a decision the spec did not state, taken while building it.
+
+- **The page's CSP allows inline styles** (`style-src 'self' 'unsafe-inline'` in `tauri.conf.json`, ticket 12). xterm.js creates `<style>` elements at run time (its viewport always; the DOM renderer for its theme and cell sizes), which `style-src 'self'` blocks, and run-time elements can't carry a hash or Tauri's build-time nonce. `script-src` stays `'self'`, so injected styles still need the app's own script to put them there. The built `index.html` has no inline `<style>`, so Tauri adds no style nonce that would void `'unsafe-inline'`.
+- **The main webview's script may use the clipboard** (WebKitGTK's `javascript-can-access-clipboard`, set by `terminals::allow_clipboard`, ticket 13). The seated terminal's Ctrl+Shift+C and Ctrl+Shift+V run `document.execCommand('copy' | 'paste')`, which WebKitGTK refuses without it. The setting is per webview, so it holds for the whole page, not the overlay alone; the page runs only its own script (`script-src 'self'`) and is the only webview.
+- **A suspended world keeps its attaches for 2 s** (`HANG_UP_SUSPENDED_AFTER`, ticket 11) before hanging them up; Back and keep warm hang up at once. A compositor that holds one frame callback back (a nested KWin did, as the cursor was captured) is no reason to restart attaches that take seconds to start.
+- **Every attachable session without a transcript is listed** (`with_unwritten` in the registry, ticket 15), not only those New session started. A background session has no transcript before its first prompt, wherever it was started (New session, or `claude --bg` in a terminal); it is live and attachable, so it gets a desk like any live session. A terminal-started session still waits for its transcript.
+- **New session has one deadline** (`NEW_SESSION_WITHIN`, 15 s from the press) for `claude --bg` and for the tree to list the session; the shell keeps it, and the page waits for the shell's answer. A `claude --bg` still running at the deadline is left to finish, never stopped: Claude Code's background service may already have started the session, and session terminals never stop a session.
+- **No key reaches an attach that has left the alternate screen.** The attach leaves it first as it turns into agent view or exits, and the twice-a-second check notices only later; input in between is dropped, so it can't reach agent view.
+- **Shutdown is explicit:** a world that ends (a stop, as on sign-out and quit, a crash or a restart) shuts the terminals down at once, and so does the app's exit event, since exiting runs no destructors.
+- **There is no sign-out** (the [local-only spec](../../.scratch/local-only/spec.md), 2026-10-20): the app has no account, so the stop above comes from quitting, a crash or a restart only. Settings, which took Back's place on the world screen, keeps the world warm.

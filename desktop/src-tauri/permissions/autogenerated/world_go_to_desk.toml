@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-go-to-desk"
+description = "Enables the world_go_to_desk command without any pre-configured scope."
+commands.allow = ["world_go_to_desk"]
+
+[[permission]]
+identifier = "deny-world-go-to-desk"
+description = "Denies the world_go_to_desk command without any pre-configured scope."
+commands.deny = ["world_go_to_desk"]

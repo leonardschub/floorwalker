@@ -1,0 +1,40 @@
+{
+ "steps": [
+  { "at": 0, "projects": [] },
+  { "at": 8000, "projects": [
+   { "id": "-home-dev-Projects-Alpha", "name": "Alpha", "sessions": [
+    { "id": "a1c0ffee-0000-4000-8000-000000000001", "title": "Plan the corridor", "started": 8000,
+     "root": { "model": "Opus 5.5", "state": "busy", "currentTool": "Bash", "children": [
+      { "id": "a5ub0000000000001", "name": "Explore", "model": "Haiku 5.5", "state": "running" } ] } } ] } ] },
+  { "at": 14000, "projects": [
+   { "id": "-home-dev-Projects-Alpha", "name": "Alpha", "sessions": [
+    { "id": "a1c0ffee-0000-4000-8000-000000000001", "title": "Plan the corridor", "started": 8000,
+     "root": { "model": "Opus 5.5", "state": "busy", "currentTool": "Bash", "children": [
+      { "id": "a5ub0000000000001", "name": "Explore", "model": "Haiku 5.5", "state": "running" } ] } } ] },
+   { "id": "-home-dev-Projects-Beta", "name": "Beta", "sessions": [
+    { "id": "b2c0ffee-0000-4000-8000-000000000002", "title": "Fix the reset race", "started": 14000,
+     "root": { "model": "Sonnet 5.5", "state": "idle" } } ] } ] },
+  { "at": 20000, "projects": [
+   { "id": "-home-dev-Projects-Gamma", "name": "Gamma", "sessions": [
+    { "id": "c3c0ffee-0000-4000-8000-000000000003", "title": "Translate chapter 12", "started": 20000,
+     "root": { "model": "GPT-6 Luna", "state": "busy", "currentTool": "Read" } } ] },
+   { "id": "-home-dev-Projects-Beta", "name": "Beta", "sessions": [
+    { "id": "b2c0ffee-0000-4000-8000-000000000002", "title": "Fix the reset race", "started": 14000,
+     "root": { "model": "Sonnet 5.5", "state": "idle" } } ] },
+   { "id": "-home-dev-Projects-Alpha", "name": "Alpha", "sessions": [
+    { "id": "a1c0ffee-0000-4000-8000-000000000001", "title": "Plan the corridor", "started": 8000,
+     "root": { "model": "Opus 5.5", "state": "busy", "currentTool": "Bash", "children": [
+      { "id": "a5ub0000000000001", "name": "Explore", "model": "Haiku 5.5", "state": "running" } ] } } ] } ] },
+  { "at": 45000, "projects": [
+   { "id": "-home-dev-Projects-Gamma", "name": "Gamma", "sessions": [
+    { "id": "c3c0ffee-0000-4000-8000-000000000003", "title": "Translate chapter 12", "started": 20000,
+     "root": { "model": "GPT-6 Luna", "state": "busy", "currentTool": "Read" } } ] },
+   { "id": "-home-dev-Projects-Beta", "name": "Beta", "sessions": [
+    { "id": "b2c0ffee-0000-4000-8000-000000000002", "title": "Fix the reset race", "started": 14000,
+     "root": { "model": "Sonnet 5.5", "state": "idle" } } ] },
+   { "id": "-home-dev-Projects-Alpha", "name": "Alpha", "sessions": [
+    { "id": "a1c0ffee-0000-4000-8000-000000000001", "title": "Plan the corridor", "started": 8000,
+     "live": false, "root": { "model": "Opus 5.5", "state": "finished", "children": [
+      { "id": "a5ub0000000000001", "name": "Explore", "model": "Haiku 5.5", "state": "finished" } ] } } ] } ] }
+ ]
+}

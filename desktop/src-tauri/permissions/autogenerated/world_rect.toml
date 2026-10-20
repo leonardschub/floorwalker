@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-world-rect"
+description = "Enables the world_rect command without any pre-configured scope."
+commands.allow = ["world_rect"]
+
+[[permission]]
+identifier = "deny-world-rect"
+description = "Denies the world_rect command without any pre-configured scope."
+commands.deny = ["world_rect"]

@@ -1,0 +1,225 @@
+/*
+ * The repo's design tokens, written onto HeroUI v3's own variable names.
+ *
+ * The shape of this layer is settled in
+ * .scratch/2d-app-gui/issues/04-grilling-theme-token-architecture.md and the values are
+ * the design lock in .scratch/2d-app-gui/issues/03-grilling-lock-design-direction.md.
+ * ADR-0006 records why the kit's names are the repo's names; ADR-0007 records the switch.
+ *
+ * This file is the only place a colour lives. Screen code uses the token utilities.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
+
+/* Dark is the default: :root carries the dark values, so the static class on
+   web/index.html and a key-less visitor both resolve dark. */
+:root,
+.dark,
+[data-theme='dark'] {
+ color-scheme: dark;
+
+ /* Surfaces, in elevation order */
+ --background: #0b0f13;
+ --surface: #141a20;
+ --field-background: #1a222a;
+ --raised: #212b34;
+
+ /* The kit's overlay is the surface a floating component is drawn on, which is the top
+    of the elevation stack: the locked raised step. Light mode overrides it below,
+    where raised is a recessed fill rather than an elevated one. */
+ --overlay: var(--raised);
+
+ /* Text */
+ --foreground: #e8eff5;
+ --muted: #95a5b2;
+ --faint: #7d8b96;
+
+ /* Lines */
+ --separator: #242f38;
+ --separator-strong: #3a4750;
+ --border: var(--separator);
+
+ /* The kit derives a field's radius from --radius through --field-radius, and reads
+    it at property-resolution time rather than through a utility. Both names are
+    declared here, in plain CSS, rather than in @theme below: a theme variable nothing
+    in the source references is pruned out of the build entirely, which would leave the
+    package's own 1.5x copy in charge of a kit field. The value is the same in both
+    modes, so it lives in the shared block. */
+ --field-radius: 12px;
+ --radius-field: 12px;
+
+ /* Accent, danger, success. States the lock does not name derive from their neighbour. */
+ --accent: #5aa2ff;
+ --accent-hover: #7eb8ff;
+ --accent-ink: #04152e;
+ --danger: #f2756e;
+ --danger-ink: color-mix(in oklab, var(--danger) 12%, var(--background));
+ --success: #4ecb8a;
+ --warning: #f2b84b;
+ --focus: var(--accent);
+
+ /* The black of a PC's glass in the world, behind the seated terminal: the same in
+    both modes, since it stands for a lit object rather than the UI's surface. */
+ --glass: #000000;
+
+ /* Kit pairs and neighbouring roles the lock leaves unnamed. */
+ --surface-foreground: var(--foreground);
+ --overlay-foreground: var(--foreground);
+ --field-foreground: var(--foreground);
+ --field-placeholder: var(--faint);
+ --field-border: var(--separator);
+ --accent-foreground: var(--accent-ink);
+ --danger-foreground: var(--danger-ink);
+ --success-foreground: var(--accent-ink);
+ --default: var(--raised);
+ --default-foreground: var(--foreground);
+ --segment: var(--raised);
+ --segment-foreground: var(--foreground);
+ --surface-secondary: color-mix(
+  in oklab,
+  var(--surface) 94%,
+  var(--foreground) 6%
+ );
+ --surface-tertiary: color-mix(
+  in oklab,
+  var(--surface) 90%,
+  var(--foreground) 10%
+ );
+ --link: var(--accent);
+
+ /* Elevation: controls, cards, overlays. */
+ --control-shadow: 0 1px 2px rgb(0 0 0 / 35%);
+ --card-shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 12px 28px -16px rgb(0 0 0 / 65%);
+ --overlay-shadow:
+  0 2px 4px rgb(0 0 0 / 35%), 0 24px 48px -24px rgb(0 0 0 / 70%);
+ --field-shadow: var(--control-shadow);
+ --surface-shadow: var(--card-shadow);
+}
+
+/* Light is a complete independent set, not a derivation from dark. It is declared after
+   the dark block because the two selector lists have equal specificity. */
+.light,
+[data-theme='light'] {
+ color-scheme: light;
+
+ --background: #f4f7f9;
+ --surface: #ffffff;
+ --field-background: #f5f8fa;
+ --raised: #eef3f6;
+ --overlay: var(--surface);
+
+ --foreground: #0f171d;
+ --muted: #556572;
+ --faint: #5f6e79;
+
+ --separator: #d9e2e8;
+ --separator-strong: #b3c2cc;
+ --border: var(--separator);
+
+ --accent: #1d4ed8;
+ --accent-hover: #1a44bd;
+ --accent-ink: #ffffff;
+ --danger: #b42318;
+ --danger-ink: color-mix(in oklab, var(--danger) 12%, var(--background));
+ --success: #116b3d;
+ --warning: #b45309;
+ --focus: var(--accent);
+
+ --control-shadow: 0 1px 2px rgb(16 24 32 / 6%);
+ --card-shadow:
+  0 1px 2px rgb(16 24 32 / 6%), 0 12px 28px -18px rgb(16 24 32 / 28%);
+ --overlay-shadow:
+  0 2px 4px rgb(16 24 32 / 6%), 0 24px 48px -28px rgb(16 24 32 / 32%);
+}
+
+@theme inline {
+ --font-sans:
+  ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+  Arial, sans-serif;
+ --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+ /* The locked type ladder. body takes --text-sm. */
+ --text-xs: 12.5px;
+ --text-sm: 14px;
+ --text-base: 16px;
+ --text-2xl: 24px;
+ --text-3xl: 30px;
+
+ /* The locked radius scale, plus the pill. */
+ --radius-xs: 6px;
+ --radius-sm: 9px;
+ --radius-md: 12px;
+ --radius-lg: 16px;
+ --radius-xl: 22px;
+ --radius-pill: 999px;
+ --radius: 12px;
+
+ /* Functional motion only, per the lock: state colours take 140ms and a press takes
+    100ms. The press step is its own token, applied by `active:duration-press` on the
+    controls that carry a press offset, so the reduced-motion rule below removes it
+    along with the rest. */
+ --default-transition-duration: 140ms;
+ --press-duration: 100ms;
+ --transition-duration-press: var(--press-duration);
+
+ --color-background: var(--background);
+ --color-foreground: var(--foreground);
+ --color-surface: var(--surface);
+ --color-raised: var(--raised);
+ --color-overlay: var(--overlay);
+ --color-separator: var(--separator);
+ --color-separator-strong: var(--separator-strong);
+ --color-muted: var(--muted);
+ --color-faint: var(--faint);
+ --color-accent: var(--accent);
+ --color-accent-hover: var(--accent-hover);
+ --color-accent-ink: var(--accent-ink);
+ --color-danger: var(--danger);
+ --color-danger-ink: var(--danger-ink);
+ --color-success: var(--success);
+ --color-warning: var(--warning);
+ --color-glass: var(--glass);
+ --color-focus: var(--focus);
+
+ --shadow-control: var(--control-shadow);
+ --shadow-card: var(--card-shadow);
+}
+
+/* Values, keys and legal metadata: one monospace step at 13px. */
+@utility text-mono {
+ font-family: var(--font-mono);
+ font-size: 13px;
+ line-height: 1.45;
+}
+
+@layer base {
+ html {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+ }
+
+ body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+ }
+
+ /* A theme change paints immediately: no transition reaches these elements. */
+ html,
+ body {
+  transition: none;
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+   animation-duration: 0.01ms !important;
+   animation-iteration-count: 1 !important;
+   transition-duration: 0.01ms !important;
+   scroll-behavior: auto !important;
+  }
+ }
+}

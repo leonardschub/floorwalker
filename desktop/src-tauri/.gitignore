@@ -1,0 +1,3 @@
+target/
+# Regenerable Tauri build output (capability schemas, mobile projects).
+/gen/

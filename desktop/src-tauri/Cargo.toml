@@ -1,0 +1,95 @@
+[package]
+name = "floorwalker"
+version = "0.1.0"
+edition = "2021"
+
+# The agent registry (ADR-0010) and the session terminals (ADR-0015) are their own crates
+# in this workspace, free of Tauri and Bevy, so their tests build in seconds:
+# `cargo test -p agents`, `cargo test -p terminals`.
+[workspace]
+members = ["agents", "terminals"]
+
+[lib]
+name = "floorwalker_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+# Reads the debug builds' scripted timeline (`WORLD_DEBUG_TIMELINE`).
+serde_json = "1"
+# Linux/Wayland only (spec: Platform). Pinned to the version tao already uses.
+gtk = "0.18"
+# The world (spec: "The real world launcher"; ADR-0009), at the spike's versions. Bevy owns
+# no window and no event loop: no bevy_winit, x11 or wayland feature. `bevy_gltf` and
+# `png` load the generated pieces and their baked textures (ADR-0012); spawning a glTF
+# scene copies its components by reflection, which needs `reflect_auto_register` (one of
+# Bevy's default features) to know their types. `bevy_text`, `bevy_sprite` and
+# `bevy_sprite_render` draw the room signs and the robots' model names as 2D text into
+# images (no system fonts: the committed Oswald only).
+bevy = { version = "=0.20.0", default-features = false, features = [
+  "std",
+  "multi_threaded",
+  "async_executor",
+  "bevy_log",
+  "bevy_asset",
+  "bevy_window",
+  "bevy_render",
+  "bevy_core_pipeline",
+  "bevy_pbr",
+  "bevy_light",
+  "bevy_camera",
+  "bevy_mesh",
+  "bevy_color",
+  "bevy_gltf",
+  "png",
+  "reflect_auto_register",
+  "bevy_text",
+  "bevy_sprite",
+  "bevy_sprite_render",
+  "tonemapping_luts",
+  "ktx2",
+  "zstd_rust",
+] }
+# Must match the webkit2gtk Tauri itself uses, to reach the webview widget.
+webkit2gtk = "=2.0.2"
+# The subsurface under the GTK toplevel, on GTK's own wl_display.
+wayland-client = { version = "0.31", features = ["system"] }
+wayland-backend = { version = "0.3", features = ["client_system"] }
+raw-window-handle = "0.6"
+tokio = { version = "1", features = ["sync"] }
+tauri-plugin-dialog = "=2.7.3"
+# Ctrl+click on a link in the seated terminal opens it in the default browser; the
+# capability allows http and https URLs only.
+tauri-plugin-opener = "=2.7.0"
+agents = { path = "agents" }
+# Session terminals (ADR-0015): `claude attach` under PTYs the app owns, painted into the
+# PCs' images. Bevy- and Tauri-free like `agents`: `cargo test -p terminals`.
+terminals = { path = "terminals" }
+# Measures sign and name text and tells which characters the font has: the font reader
+# parley (bevy_text's layout) uses, at its version, so nothing new is built.
+skrifa = { version = "0.44", default-features = false, features = ["std"] }
+# `malloc_trim`: the world hands the memory its load freed back to the system.
+libc = "0.2"
+
+# Bevy is slow to build and slow unoptimised: optimise dependencies even in dev builds,
+# and skip debug info (the spike's settings, which also share its build cache).
+[profile.dev]
+debug = false
+
+[profile.dev.package."*"]
+opt-level = 2
+
+# The app itself too (ticket 27): the world's own systems take a third less of each frame
+# (3.4 ms to 2.4 ms in a 40-desk room) and the baked textures' mip chains 0.5 s rather
+# than 3.6 s at start. A change to the crate rebuilds in about a minute instead of 20 s;
+# opt-level 1 builds no faster. Debug assertions stay on (the `WORLD_DEBUG_*` switches).
+[profile.dev.package.floorwalker]
+opt-level = 2
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

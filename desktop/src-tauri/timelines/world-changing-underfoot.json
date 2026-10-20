@@ -1,0 +1,844 @@
+{
+ "steps": [
+  {
+   "at": 0,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-7",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 30000,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-7",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-8",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 50000,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 75000,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 100000,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 115000,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Delta",
+     "name": "Delta",
+     "sessions": [
+      {
+       "id": "delta0000-0000-4000-8000-000000000004",
+       "title": "Delta's session",
+       "started": 110000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Epsilon",
+     "name": "Epsilon",
+     "sessions": [
+      {
+       "id": "epsilon0000-0000-4000-8000-000000000005",
+       "title": "Epsilon's session",
+       "started": 111000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Zeta",
+     "name": "Zeta",
+     "sessions": [
+      {
+       "id": "zeta0000-0000-4000-8000-000000000006",
+       "title": "Zeta's session",
+       "started": 112000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 140000,
+   "projects": [
+    {
+     "id": "-home-dev-Projects-Alpha",
+     "name": "Alpha",
+     "sessions": [
+      {
+       "id": "alpha0000-0000-4000-8000-000000000001",
+       "title": "Alpha's session",
+       "started": -60000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": [
+         {
+          "id": "alpha-sub-0",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-1",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-2",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-3",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-4",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-5",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         },
+         {
+          "id": "alpha-sub-6",
+          "name": "Explore",
+          "model": "Haiku 5.5",
+          "state": "running"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Beta",
+     "name": "Beta",
+     "sessions": [
+      {
+       "id": "beta0000-0000-4000-8000-000000000002",
+       "title": "Beta's session",
+       "started": -50000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Gamma",
+     "name": "Gamma",
+     "sessions": [
+      {
+       "id": "gamma0000-0000-4000-8000-000000000003",
+       "title": "Gamma's session",
+       "started": -40000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Delta",
+     "name": "Delta",
+     "sessions": [
+      {
+       "id": "delta0000-0000-4000-8000-000000000004",
+       "title": "Delta's session",
+       "started": 110000,
+       "live": true,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "busy",
+        "currentTool": "Bash",
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Epsilon",
+     "name": "Epsilon",
+     "sessions": [
+      {
+       "id": "epsilon0000-0000-4000-8000-000000000005",
+       "title": "Epsilon's session",
+       "started": 111000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    },
+    {
+     "id": "-home-dev-Projects-Zeta",
+     "name": "Zeta",
+     "sessions": [
+      {
+       "id": "zeta0000-0000-4000-8000-000000000006",
+       "title": "Zeta's session",
+       "started": 112000,
+       "live": false,
+       "root": {
+        "model": "Opus 5.5",
+        "state": "finished",
+        "currentTool": null,
+        "children": []
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

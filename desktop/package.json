@@ -1,0 +1,16 @@
+{
+  "name": "desktop",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "tauri": "tauri",
+    "world-assets": "python3 world-assets/regenerate.py",
+    "world-assets:force": "python3 world-assets/regenerate.py --force"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}
